@@ -5,53 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
-    <link rel="stylesheet" href="node_modules/amis/sdk/sdk.css" />
-    <link rel="stylesheet" href="node_modules/amis/sdk/helper.css" />
-    <link rel="stylesheet" href="node_modules/amis/sdk/iconfont.css" />
-    <style>
-      html,
-      body,
-      .app-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
   </head>
   <body>
-    <div id="root" class="app-wrapper"></div>
-    <script src="sdk.js"></script>
-    <script type="text/javascript">
-      (function () {
-        let amis = amisRequire('amis/embed');
-        // 通过替换下面这个配置来生成不同页面
-        let amisJSON = {
-          type: 'page',
-          title: '表单页面',
-          body: {
-            type: 'form',
-            mode: 'horizontal',
-            api: '/saveForm',
-            body: [
-              {
-                label: 'Name',
-                type: 'input-text',
-                name: 'name'
-              },
-              {
-                label: 'Email',
-                type: 'input-email',
-                name: 'email'
-              }
-            ]
-          }
-        };
-        let amisScoped = amis.embed('#root', amisJSON);
-      })();
-    </script>
-    <div id="root1"></div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

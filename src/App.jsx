@@ -2,12 +2,41 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import axios from 'axios';
+import copy from 'copy-to-clipboard';
+import { render as renderAmis } from 'amis';
+import { ToastComponent, AlertComponent, alert, confirm, toast } from 'amis-ui';
+import 'amis/lib/themes/cxd.css';
+import 'amis/lib/helper.css';
+import 'amis/sdk/iconfont.css';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      {renderAmis(
+        {
+          type: 'page',
+          title: '表单页面',
+          body: {
+            type: 'form',
+            mode: 'horizontal',
+            api: '/saveForm',
+            body: [
+              {
+                label: 'Name',
+                type: 'input-text',
+                name: 'name'
+              },
+              {
+                label: 'Email',
+                type: 'input-email',
+                name: 'email'
+              }
+            ]
+          }
+        }
+      )}
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
